@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>br.com.paqui.estudos</groupId>
+		<artifactId>estudos-java</artifactId>
+		<version>2017.04.00</version>
+		<relativePath>../</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.estudos.paqui</groupId>
+	<artifactId>estudos-java-8</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<!-- encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!--java version -->
+		<java-version>1.8</java-version>
+
+		<!-- plugin versions -->
+		<ejb-plugin-version>2.4</ejb-plugin-version>
+		<war-plugin-version>2.5</war-plugin-version>
+		<ear-plugin-version>2.9.1</ear-plugin-version>
+
+		<compiler-plugin-version>3.2</compiler-plugin-version>
+
+		<!-- dependency versions -->
+		<javaee-api-version>7.0</javaee-api-version>
+
+		<!-- EJB spec version -->
+		<ejb-spec-version>3.2</ejb-spec-version>
+
+		<jackson-version>2.5.0</jackson-version>
+		<easymock-version>3.4</easymock-version>
+		<hsqldb-version>2.3.4</hsqldb-version>
+		<objenesis-version>1.2</objenesis-version>
+		<powermock-version>1.6.5</powermock-version>
+		<cglib-version>2.2</cglib-version>
+		<easymockclassextension-version>3.1</easymockclassextension-version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- compiler plugin -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${compiler-plugin-version}</version>
+					<configuration>
+						<source>${java-version}</source>
+						<target>${java-version}</target>
+						<compilerVersion>${java-version}</compilerVersion>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+</project>
